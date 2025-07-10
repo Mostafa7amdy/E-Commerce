@@ -1,0 +1,12 @@
+import express from "express";
+import dotenv from "dotenv";
+import { connection } from "./database/dbConnection.js";
+import { bootstrap } from "./src/modules/index.routes.js";
+import { globalError } from "./src/middleware/globalError.js";
+dotenv.config();
+const app = express();
+connection();
+app.listen(3000, () => console.log("code is running...."));
+app.use(express.json());
+bootstrap(app);
+globalError;

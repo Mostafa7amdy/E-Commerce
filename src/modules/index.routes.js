@@ -1,0 +1,28 @@
+import { globalError } from "../middleware/globalError.js";
+import { categoryRouter } from "./category/categoryRouts.js";
+import express from "express";
+import { subcategoryRouter } from "./subCategory/subcategoryRouts.js";
+import { brandRouter } from "./brand/brandRouts.js";
+import { productRouter } from "./product/productRouts.js";
+import { userRouter } from "./user/userRouts.js";
+import { authRouter } from "./auth/authRouts.js";
+import { reviewRouter } from "./review/reviewRouts.js";
+import { wishListRouter } from "./wishList/wishListRouts.js";
+import { adressesRouter } from "./address/addressRouts.js";
+import { couponRouter } from "./coupon/couponRouts.js";
+import { cartRouter } from "./cart/cartRouts.js";
+export const bootstrap = (app) => {
+  app.use("/api/v1/categories", categoryRouter);
+  app.use("/api/v1/subCategories", subcategoryRouter);
+  app.use("/api/v1/brands", brandRouter);
+  app.use("/api/v1/products", productRouter);
+  app.use("/api/v1/users", userRouter);
+  app.use("/api/v1/auth", authRouter);
+  app.use("/api/v1/reviews", reviewRouter);
+  app.use("/api/v1/wishList", wishListRouter);
+  app.use("/api/v1/adresses", adressesRouter);
+  app.use("/api/v1/coupon", couponRouter);
+  app.use("/api/v1/cart", cartRouter);
+  app.use("/uploads", express.static("uploads/"));
+  app.use(globalError);
+};
