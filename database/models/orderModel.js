@@ -1,4 +1,3 @@
-import { boolean } from "joi";
 import mongoose from "mongoose";
 const schema = new mongoose.Schema(
   {
@@ -14,7 +13,7 @@ const schema = new mongoose.Schema(
       },
     ],
     totalOrderPrice: Number,
-    shippingAdress: {
+    shippingAddress: {
       street: String,
       city: String,
       phone: Number,

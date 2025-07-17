@@ -11,6 +11,7 @@ import { wishListRouter } from "./wishList/wishListRouts.js";
 import { adressesRouter } from "./address/addressRouts.js";
 import { couponRouter } from "./coupon/couponRouts.js";
 import { cartRouter } from "./cart/cartRouts.js";
+import { orderRouter } from "./order/orderRouts.js";
 export const bootstrap = (app) => {
   app.use("/api/v1/categories", categoryRouter);
   app.use("/api/v1/subCategories", subcategoryRouter);
@@ -24,5 +25,6 @@ export const bootstrap = (app) => {
   app.use("/api/v1/coupon", couponRouter);
   app.use("/api/v1/cart", cartRouter);
   app.use("/uploads", express.static("uploads/"));
+  app.use("/api/v1/order", orderRouter);
   app.use(globalError);
 };

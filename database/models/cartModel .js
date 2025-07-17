@@ -18,6 +18,6 @@ const schema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-const cartModel = mongoose.model("cart", schema);
+const cartModel = mongoose.models.cart || mongoose.model("cart", schema);
 
 export { cartModel };
